@@ -1,0 +1,13 @@
+@import '../../styles.scss';
+
+.card {
+  width: 300px;
+  background-color: $white;
+}
+.card_text {
+  padding: 5px;
+  font-weight: bold;
+}
+.card_text_span {
+  font-weight: normal;
+}
