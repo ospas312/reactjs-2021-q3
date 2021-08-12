@@ -6,6 +6,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ESLintPlugin = require("eslint-webpack-plugin");
 const PrettierPlugin = require("prettier-webpack-plugin");
 
+const esLintPlugin = (dev) => (dev ? [] : [new ESLintPlugin({ extensions: ["ts", "js", "tsx"] })]);
+
 module.exports = ({dev}) => ({
     mode: dev ? 'development' : 'production',
     entry: {
@@ -33,7 +35,8 @@ module.exports = ({dev}) => ({
         new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
         new CleanWebpackPlugin(),
         new PrettierPlugin(),
-        new ESLintPlugin({ extensions: ["ts", "js", "tsx"]}), 
+        //dev ? '' : new ESLintPlugin({ extensions: ["ts", "js", "tsx"]}),
+        ...esLintPlugin(dev),
     ],
     module: {
         rules: [

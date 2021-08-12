@@ -17,9 +17,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: $light_grey;
 }
+.main {
+  min-height: calc(100vh - 142px);
+}
 section {
   padding: 50px 50px 50px 50px;
-  min-height: calc(100vh - 91px);
+  //min-height: calc(100vh - 91px);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(420px, max-content));
   justify-content: center;

@@ -1,35 +1,29 @@
 import './Card.scss';
 import * as React from 'react';
+import { ICard } from '../interfaces/ICard';
 
 interface IProps {
   card: ICard;
-}
-interface ICard {
-  name: string;
-  link: string;
-  country: string;
-  author: string;
-  author_image: string;
-  date: string;
 }
 
 export function Card(props: IProps): JSX.Element {
   return (
     <div className="card">
-      <div className="card_image" style={{ backgroundImage: `url(${props.card.link})` }}></div>
-      <div className="card_content">
-        <p className="card_content__name">{props.card.name}</p>
-        <div className="card_content__info">
-          <p className="card_content__country">{props.card.country}</p>
-          <p className="card_content__date">{props.card.date}</p>
-        </div>
-      </div>
-      <div className="card_author">
-        <img className="card_author__image" src={`${props.card.author_image}`} />
-        <p className="card_author__text">
-          by <span className="card_author__text">{props.card.author}</span>
-        </p>
-      </div>
+      <p className="card_text">
+        ФИО: <span className="card_text_span">{props.card.name}</span>
+      </p>
+      <p className="card_text">
+        Дата рождения: <span className="card_text_span">{props.card.date}</span>
+      </p>
+      <p className="card_text">
+        Страна: <span className="card_text_span">{props.card.country}</span>
+      </p>
+      <p className="card_text">
+        Пол: <span className="card_text_span">{props.card.gender}</span>
+      </p>
+      <p className="card_text">
+        Согласие на рассылку: <span className="card_text_span">{props.card.offer ? 'Да' : 'Нет'}</span>
+      </p>
     </div>
   );
 }

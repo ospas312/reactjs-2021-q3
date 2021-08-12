@@ -35,8 +35,9 @@
       }
     ]
   }
-}*/
-  
+}
+*/
+ 
 {
   "env": {
     "browser": true,
@@ -67,6 +68,8 @@
   },
   "rules": {
     "linebreak-style": 0,
+    "comma-dangle": "off",
+    "@typescript-eslint/comma-dangle": ["error"],
     "no-plusplus": "off",
     "no-console": "warn",
     "max-len": ["warn", { "code": 120 }],
